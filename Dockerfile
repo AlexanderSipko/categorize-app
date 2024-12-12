@@ -1,29 +1,28 @@
-# Base on official Node.js Alpine image
 FROM node:alpine
 
-# Set working directory
+# Установить рабочую директорию
 WORKDIR /usr/app
 
-# Copy package.json and package-lock.json before other files
-# Utilise Docker cache to save re-installing dependencies if unchanged
+# Копировать package.json и package-lock.json
 COPY ./package*.json ./
 
-# Install dependencies
+# Установить зависимости
 RUN npm install
 
+# Удалить ненужные пакеты
 RUN npm uninstall punycode
 
-# Copy all files
+# Копировать все файлы
 COPY ./ ./
 
-# Build app
+# Построить приложение
 RUN npm run build
 
-# Expose the listening port
+# Открыть порт
 EXPOSE 3005
 
-# Run container as non-root (unprivileged) user
+# Запустить контейнер от имени непривилегированного пользователя
 USER node
 
-# Run npm start script when container starts
+# Запустить скрипт npm start при старте контейнера
 CMD ["sh", "-c", "PORT=3005 npm start"]

@@ -22,6 +22,8 @@ export default function Home() {
           <span>ToDo</span>
           <p>+~~~~~~~~~~~~`</p>
         </Link>
+
+        <h2>Success load</h2>
       </main>
     </div>
 
