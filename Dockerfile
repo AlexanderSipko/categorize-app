@@ -26,4 +26,4 @@ EXPOSE 3005
 USER node
 
 # Run npm start script when container starts
-CMD [ "PORT=3005 npm", "start" ]
+CMD ["sh", "-c", "PORT=3005 npm start"]
