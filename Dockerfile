@@ -20,7 +20,7 @@ COPY ./ ./
 RUN npm run build
 
 # Expose the listening port
-EXPOSE 3000
+EXPOSE 8080
 
 # Run container as non-root (unprivileged) user
 USER node
