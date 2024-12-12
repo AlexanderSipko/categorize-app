@@ -24,6 +24,7 @@ export default function Home() {
         </Link>
 
         <h2>Success load</h2>
+        <p>create CI/CD success install</p>
       </main>
     </div>
 
