@@ -20,10 +20,10 @@ COPY ./ ./
 RUN npm run build
 
 # Expose the listening port
-EXPOSE 8080
+EXPOSE 3005
 
 # Run container as non-root (unprivileged) user
 USER node
 
 # Run npm start script when container starts
-CMD [ "npm", "start" ]
+CMD [ "PORT=3005 npm", "start" ]
