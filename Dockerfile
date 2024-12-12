@@ -1,4 +1,4 @@
-# Base on offical Node.js Alpine image
+# Base on official Node.js Alpine image
 FROM node:alpine
 
 # Set working directory
@@ -9,7 +9,7 @@ WORKDIR /usr/app
 COPY ./package*.json ./
 
 # Install dependencies
-RUN npm install --production
+RUN npm install
 
 # Copy all files
 COPY ./ ./
@@ -21,7 +21,6 @@ RUN npm run build
 EXPOSE 3000
 
 # Run container as non-root (unprivileged) user
-# The node user is provided in the Node.js Alpine base image
 USER node
 
 # Run npm start script when container starts
