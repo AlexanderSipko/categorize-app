@@ -2,12 +2,23 @@ version: '3'
 
 services:
   recognize_app_nextjs:
-    build: ./
+    build: .
     environment:
-      - NEXT_AUTH_SECRET=w35d4mF9x9/Uj8BZ+Gy2nNu0GOil+GtVb+arBKoUnhc=
+      - NEXT_AUTH_SECRET=your_secret_key
     expose:
-      - 3005 # Используйте expose вместо ports, чтобы контейнер был доступен только для других контейнеров в сети
+      - 3005 # Next.js доступен только в сети Docker
+    networks:
+      - recognize_app_network
+
   nginx:
     build: ./nginx
+    depends_on:
+      - recognize_app_nextjs
     ports:
-      - 8080:80 # Привязка порта 8080 хоста к 80 порту контейнера
+      - "8080:80" # Публикация порта
+    networks:
+      - recognize_app_network
+
+networks:
+  recognize_app_network:
+    driver: bridge

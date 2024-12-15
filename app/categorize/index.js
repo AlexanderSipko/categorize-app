@@ -86,6 +86,7 @@ const DragAndDropPage = () => {
       destinationRow.cards.splice(destination.index, 0, movedCard);
       setData({ rows: newRows });
     }
+    
   };
 
   return (

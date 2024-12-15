@@ -15,6 +15,10 @@ export default function HomePage() {
       >
         Тестовая страница !
       </Link>
+
+      <div>
+        <p>success add CI|CD</p>
+      </div>
     </>
   );
 }
