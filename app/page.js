@@ -13,7 +13,7 @@ export default function HomePage() {
         href="/categorize" 
         className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-300 transform transition-transform duration-300 active:scale-95"
       >
-        Тестовая страница
+        Тестовая страница !
       </Link>
     </>
   );
