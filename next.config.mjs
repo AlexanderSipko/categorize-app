@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    basePath: '/recognize_app',
     assetPrefix: '/recognize_app/_next',
     async headers() {
         return [
