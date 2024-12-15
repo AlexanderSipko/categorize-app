@@ -7,10 +7,10 @@ WORKDIR /usr/app
 COPY ./package*.json ./
 
 # Установить зависимости
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # Удалить ненужные пакеты
-RUN npm uninstall punycode
+# RUN npm uninstall punycode
 
 # Копировать все файлы
 COPY ./ ./

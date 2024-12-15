@@ -1,6 +1,10 @@
 // app/recognize_app/page.js
-
+'use client'
 import Link from "next/link";
+
+import DragAndDropPage from './index'
+
+// const DragAndDropPage = dynamic(() => import('./index'), { ssr: false });
 
 export default function RecognizeApp() {
     return (
@@ -12,6 +16,11 @@ export default function RecognizeApp() {
                 >
                 На главную
             </Link>
+
+            <div>
+                <DragAndDropPage></DragAndDropPage>
+            </div>
+            
         </>
     );
   }

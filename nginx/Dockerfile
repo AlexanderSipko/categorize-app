@@ -1,9 +1,9 @@
 FROM nginx:alpine
 
-# Удалить любые существующие конфигурационные файлы
-RUN rm /etc/nginx/conf.d/*
+# Удалить стандартный конфигурационный файл, если он есть
+RUN rm -f /etc/nginx/conf.d/default.conf
 
-# Копировать конфигурационные файлы
+# Копировать конфигурационный файл
 COPY ./default.conf /etc/nginx/conf.d/
 
 # Открыть порт
