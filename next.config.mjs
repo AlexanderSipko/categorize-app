@@ -1,6 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    assetPrefix: '/rec/_next',
+    assetPrefix: '/recognize_app/_next',
+    async headers() {
+        return [
+          {
+            source: "/api/:path*",
+            headers: [
+              { key: "Access-Control-Allow-Origin", value: "*" },
+              { key: "Access-Control-Allow-Methods", value: "GET,POST,OPTIONS" },
+              { key: "Access-Control-Allow-Headers", value: "Content-Type" },
+            ],
+          },
+        ];
+      },
     // async rewrites() {
     //     return [
     //         {

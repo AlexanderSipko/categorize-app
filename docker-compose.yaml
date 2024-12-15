@@ -1,8 +1,10 @@
 version: '3'
 
 services:
-  nextjs:
+  recognize_app_nextjs:
     build: ./
+    environment:
+      - NEXT_AUTH_SECRET=Some-Key
     expose:
       - 3005 # Используйте expose вместо ports, чтобы контейнер был доступен только для других контейнеров в сети
   nginx:
