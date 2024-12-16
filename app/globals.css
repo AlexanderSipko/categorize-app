@@ -20,3 +20,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.droppable-area {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.dropped-item {
+  padding: 10px;
+  background-color: rgb(148, 55, 55);
+  border-radius: 5px;
+  color: white;
+}
+
+.draggable-item {
+  margin: 5px;
+  padding: 10px;
+  background-color: lightblue;
+  cursor: move;
+  border-radius: 5px;
+}
